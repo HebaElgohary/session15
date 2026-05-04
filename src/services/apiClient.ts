@@ -1,4 +1,4 @@
-import axiosInstance from "./AxiosConfig";
+import axiosInstance from "./axiosConfig";
 
 class ApiClient {
   async get<T>(url: string, params?: Record<string, unknown>): Promise<T> {

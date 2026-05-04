@@ -1,7 +1,7 @@
 // services/axiosConfig.ts
 import axios, { AxiosInstance } from "axios";
-import { ENV } from "@/config/env";
-import { TokenService } from "./tokenService";
+import { ENV } from "../config/env";
+import { tokenService } from "./tokenService";
 /**
  * ===============================
  * Axios Instance
@@ -24,7 +24,7 @@ const axiosInstance: AxiosInstance = axios.create({
  */
 axiosInstance.interceptors.request.use(
   (config) => {
-    const token = TokenService.getToken();
+    const token = tokenService.getToken();
     config.headers = config.headers || {};
 
     if (token) {
