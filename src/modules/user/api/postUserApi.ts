@@ -6,7 +6,11 @@ interface UserData {
   email: string;
   password: string;
 }
+interface UserResponse {
+    "accessToken": string,
+    "user": UserData
+}
 
-export const postUserApi = async (userData: UserData) => {
+export const postUserApi = async (userData: UserData): Promise<UserResponse> => {
   return apiClient.post('/users', userData);
 };
