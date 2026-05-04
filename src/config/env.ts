@@ -1,6 +1,6 @@
 export const ENV = {
     DEV_MODE: 'development',
-    API_URL: 'http://localhost:3005',
+    API_URL: 'http://localhost:3007',
     API_TIMEOUT: 5000,
     APP_NAME: 'SurveyLand',
     APP_VERSION: '1.0.0',
