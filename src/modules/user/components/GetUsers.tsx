@@ -4,7 +4,7 @@ import { useGetUsers } from '../hooks/useGetUsers';
 
 export default  function GetUsers() {
     const { data, isPending } =  useGetUsers();
-    const {mutate} = useDeleteUser() // Initialize with a default value 
+    const {mutate} = useDeleteUser() 
 const handelClick=(id:number)=>{
 mutate(id,{onSuccess:()=>{alert('user deleted successfully')}})
 }
