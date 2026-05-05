@@ -1,12 +1,18 @@
 'use client'
 import { useDeleteUser } from '../hooks/useDeleteUser';
 import { useGetUsers } from '../hooks/useGetUsers';
+import { useUpdateUser } from '../hooks/useUpdateUser';
 
 export default  function GetUsers() {
     const { data, isPending } =  useGetUsers();
-    const {mutate} = useDeleteUser() 
+    const {mutate:deleteUser} = useDeleteUser() 
+    const {mutate: updateUser} = useUpdateUser() 
+
 const handelClick=(id:number)=>{
-mutate(id,{onSuccess:()=>{alert('user deleted successfully')}})
+deleteUser(id,{onSuccess:()=>{alert('user deleted successfully')}})
+}
+const handelUpdate=(id:number)=>{
+updateUser(id,{onSuccess:()=>{alert('user updated successfully')}})
 }
  console.log(data)
     return (
@@ -22,7 +28,9 @@ mutate(id,{onSuccess:()=>{alert('user deleted successfully')}})
                     <div >{user.id} : {user.name}</div>
                     <div >{user.email}</div>
                     </div>
-                    <button onClick={()=>handelClick(user.id)} className='bg-red-200 text-black rounded !px-4 !py-2'>delete</button>
+                    <button onClick={()=>handelClick(user.id)} className='bg-red-400 text-black rounded !px-4 !py-2'>delete</button>
+                    <button onClick={()=>handelUpdate(user.id)} className='bg-amber-200 text-black rounded !px-4 !py-2'>update</button>
+
                      </div>
                 ))}
             </div>

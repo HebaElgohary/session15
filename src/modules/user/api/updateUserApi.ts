@@ -1,10 +1,16 @@
 import apiClient from "../../../services/apiClient";
-interface User{
+interface Payload{
     
   name: string
 
 }
-export const updateUserApi:()=>Promise<User>=async()=>{
+interface User{
+    id: number
+    name: string
+    email: string,
+    password:string
+}
+export const updateUserApi:(data:Payload)=>Promise<User>=async()=>{
     return await apiClient.put<User>('users') 
 
 }
