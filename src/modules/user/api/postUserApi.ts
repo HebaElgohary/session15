@@ -12,5 +12,5 @@ interface UserResponse {
 }
 
 export const postUserApi = async (userData: UserData): Promise<UserResponse> => {
-  return apiClient.post('/users', userData);
+  return apiClient.post<UserResponse>('/users', userData);
 };
