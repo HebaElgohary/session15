@@ -6,7 +6,7 @@ import { useUpdateUser } from '../hooks/useUpdateUser';
 export default  function GetUsers() {
     const { data, isPending } =  useGetUsers();
     const {mutate:deleteUser} = useDeleteUser() 
-    const {mutate: updateUser} = useUpdateUser() 
+    const {mutate: updateUser} = useUpdateUser(2) 
 
 const handelClick=(id:number)=>{
 deleteUser(id,{onSuccess:()=>{alert('user deleted successfully')}})
