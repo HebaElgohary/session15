@@ -6,5 +6,5 @@ interface User{
     id:number
 }
 export const getUserApi:(id:number)=>Promise<User>=async(id)=>{
-  return await apiClient.get<User>(`/user/${id}`)
+  return await apiClient.get<User>(`/users/${id}`)
 }

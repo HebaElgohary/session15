@@ -1,6 +1,7 @@
 import AddUser from "@/src/modules/user/components/AddUser";
 import GetUsers from "@/src/modules/user/components/GetUsers";
-import Image from "next/image";
+import GetUser from "@/src/modules/user/components/GetUser";
+
 
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
     <GetUsers />
      <AddUser />
+    < GetUser /> 
     </div>
   );
 }
