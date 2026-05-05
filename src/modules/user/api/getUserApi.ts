@@ -1,5 +1,4 @@
 import apiClient from "../../../services/apiClient";
-import ApiClient from "../../../services/apiClient";
 
 interface User{
     name:string ,
